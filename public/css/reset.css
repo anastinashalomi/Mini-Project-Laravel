@@ -1,0 +1,60 @@
+#reset{
+    background-image: url('/img/key.jpg');
+  
+    background-attachment: fixed;
+    background-size: cover;
+    font-family: Times New Roman;  
+}
+
+.card{
+    background-color: rgb(159, 207, 236);
+    border-color: black;
+    
+}
+.card-header{
+    color:black;
+}
+
+.label{
+    margin-left:10px;
+    color:black;
+    margin-top: 5px;
+  }
+
+  .fas{
+      color: rgb(5, 5, 102);
+  }
+
+  .fa{
+    color: rgb(5, 5, 102);
+  }
+
+  .navbar{
+      background-color: rgb(2, 2, 49);
+  }
+  
+ 
+  
+  .card{
+    background: rgb(159, 207, 236);
+  }
+  
+  
+  
+  .input-group{
+    margin-top: 10px;
+    margin-bottom: 20px;
+    margin-left: 10px;
+  }
+  
+  .input-group-addon{
+    background: transparent;
+    border-radius: 0px;
+    border: 0px;
+    border-bottom: ipx solid gray;
+    font-size: 18px;
+    color: gray;
+  }
+  
+  
+  

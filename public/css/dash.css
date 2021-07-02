@@ -1,0 +1,159 @@
+
+
+.row1{
+  margin-top: 20px;
+  justify-content: center;
+}
+
+.card1{
+
+  color: rgb(16, 16, 82);
+  
+
+}
+
+.card1 .card-header{
+  background-color: rgb(153, 153, 252);
+}
+.card1 .card-body{
+  background-color: rgb(164, 164, 250);
+}
+
+.card2{
+
+  color: rgb(2, 44, 2);
+  
+
+}
+
+.card2 .card-header{
+  background-color:rgb(75, 117, 75);
+}
+.card2 .card-body{
+  background-color:rgb(103, 136, 103);
+}
+
+
+.card3{
+
+  color: rgb(82, 5, 5);
+  
+
+}
+
+.card3 .card-header{
+  background-color: rgb(172, 92, 92);
+}
+.card3 .card-body{
+  background-color: rgb(165, 113, 113);
+}
+
+.card4{
+
+  color:rgb(102, 102, 3);
+  
+
+}
+
+.card4 .card-header{
+  background-color: rgb(145, 145, 42);
+}
+.card4 .card-body{
+  background-color: rgb(158, 158, 91);
+}
+
+.title{
+  margin-top: 10px;
+}
+
+.form{
+  border-color: crimson;
+}
+
+.card5{
+  border-color:black;
+  border-width: thick;
+  background-color:rgb(220, 232, 238);
+  
+}
+
+.mssg{
+  margin: auto;
+  color: green;
+}
+
+.table{
+  margin-top: 20px;
+}
+
+.topic{
+  margin-top: 10px;
+  table-layout: auto;
+  align-items: center;
+}
+
+.new1{
+
+  color: white;
+}
+
+
+.card6{
+  margin-left:40px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  
+}
+.card7{
+  margin-left:40px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  
+}
+
+.c{
+  margin-left: 40px;
+}
+
+.form1{
+  color:black;
+  font-weight: 700;
+  font-size: medium;
+}
+
+.form1 .form-control{
+  color:rgb(43, 42, 42);
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.container1{
+  margin-left: 40px;
+}
+
+.new2{
+  margin-top: 10px;
+}
+
+.new3{
+  margin-top: 30px;
+}
+
+
+.new4{
+  margin-top: 40px;
+  font-style: italic;
+  color:rgb(112, 6, 6);
+  font-weight:900;
+}
+
+.new5{
+  margin-top: 30px;
+  font-weight: bold;
+  color:rgb(37, 23, 100);
+}
+.badge{
+  margin-bottom: 10px;
+}
+
+

@@ -1,0 +1,7 @@
+body{
+    background-image: url('/img/che1.jpg');
+  
+    background-attachment: fixed;
+    background-size: cover;
+    font-family: Times New Roman;  
+}
