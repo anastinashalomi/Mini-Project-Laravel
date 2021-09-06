@@ -98,10 +98,14 @@ class PhysicsController extends Controller
     }
 
      //function for search physics compalint by user name
-     public function searchphy(){
+     public function searchphy(Request $request){
 
-        $search_text = $_GET['query'];
-        $physics = Physics::where('name','LIKE','%'.$search_text.'%')->get();
+        $request->validate([
+            'query'=>'required|min:2'
+          ]);
+  
+          $search_text = $request->input('query');
+        $physics = Physics::where('name','LIKE','%'.$search_text.'%')->orWhere('sid','LIKE','%'.$search_text.'%')->get();
         
         return view('admin.searchphy',['data' => $physics]);
 

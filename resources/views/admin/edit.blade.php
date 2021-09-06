@@ -47,6 +47,7 @@
 <option selected>{{$data->is_admin}}</option>
 <option value='1'>Adimn</option>
 <option value='0'>User</option>
+
 </select>
 </label>
 </div><hr>

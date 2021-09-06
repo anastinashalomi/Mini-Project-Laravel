@@ -70,6 +70,15 @@
 @endforeach
 
 </table>
+
+@forelse($data as $i)
+@empty
+<div class="alert alert-secondary alert-dismissible fade show">
+    <strong>Not result founded
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+</div>
+@endforelse
+
 </div>
 
 

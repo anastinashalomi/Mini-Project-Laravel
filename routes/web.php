@@ -106,6 +106,10 @@ Route::get('/deletecomplaintc/{id}','ChemistryController@deletecomplaintc');
 //route for search chemistry complaint through admin
 Route::get('/searchche','ChemistryController@searchche')->middleware('isadmin');
 
+//route for search user through admin
+Route::get('/searchuser','ComputerController@searchuser')->middleware('isadmin');
+
+
 
 //admin route end
 
@@ -134,6 +138,14 @@ Route::post('/computer','ComputerController@store')->middleware('auth');
 
 //route for computer complaint view of user
 Route::get('/computerview','ComputerController@computerview');
+
+
+
+
+//Route for user Account setting view
+Route::get('/userprofile','ComputerController@userprofileview');
+
+
 
 
 

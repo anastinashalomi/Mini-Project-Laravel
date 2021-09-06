@@ -259,7 +259,7 @@ class ComputerController extends Controller
         $user=User::find($id);
 
         $user->is_admin = $is_admin;
-      
+        
 
         $user->update();
         $data = User::all();
@@ -277,14 +277,42 @@ class ComputerController extends Controller
     }
 
     //function for search computer compalint by user name
-    public function search(){
+    public function search(Request $request){
 
-        $search_text = $_GET['query'];
-        $computer = Computer::where('name','LIKE','%'.$search_text.'%')->get();
+        $request->validate([
+            'query'=>'required|min:2'
+          ]);
+  
+          $search_text = $request->input('query');
+        $computer = Computer::where('name','LIKE','%'.$search_text.'%')->orWhere('sid','LIKE','%'.$search_text.'%')->get();
         
         return view('admin.searchcom',['data' => $computer]);
 
     }
+
+    //function for search computer compalint by user name
+    public function searchuser(Request $request){
+
+        $request->validate([
+          'query'=>'required|min:2'
+        ]);
+
+        $search_text = $request->input('query');
+        $user = User::where('name','LIKE','%'.$search_text.'%')->orWhere('sid','LIKE','%'.$search_text.'%')->get(); 
+        return view('admin.searchuser',['data' => $user]);
+
+    }
+
+
+    //function for update view of user
+    public function userprofileview(){
+     
+       
+       return view('user.userprofile');
+        
+    }
+
+
 
 
   

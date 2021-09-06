@@ -52,7 +52,7 @@
          </li>
 
          <li>
-             <a href="#">Account Setting</a>
+             <a href="/userprofile">Profile Details</a>
          </li>
 
      </ul>

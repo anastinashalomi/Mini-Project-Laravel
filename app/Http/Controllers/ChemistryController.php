@@ -100,10 +100,14 @@ class ChemistryController extends Controller
     }
 
     //function for search chemistry compalint by user name
-    public function searchche(){
+    public function searchche(Request $request){
 
-        $search_text = $_GET['query'];
-        $chemistry = Chemistry::where('name','LIKE','%'.$search_text.'%')->get();
+        $request->validate([
+            'query'=>'required|min:2'
+          ]);
+  
+          $search_text = $request->input('query');
+        $chemistry = Chemistry::where('name','LIKE','%'.$search_text.'%')->orWhere('sid','LIKE','%'.$search_text.'%')->get();
         
         return view('admin.searchche',['data' => $chemistry]);
 

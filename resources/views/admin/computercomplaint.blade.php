@@ -7,7 +7,13 @@
 <div class="row offset-lg-1 offset-sm-3 ofset-md-2 offset-3" style="margin-top:5px">
     <form action="/search" class="form-inline my-2 my-lg-0" method="get">
         @csrf
-        <input type="search" class="form-control mr-sm-2" name="query" type="search" placeholder="SearchByName">
+        <input id="query" type="search" class="form-control @error('query') is-invalid @enderror mr-sm-2" name="query" type="search" required placeholder="SearchByNameorSID">
+        
+        @error('query')
+         <span class="invalid-feedback" role="alert">
+            <strong>{{ $message }}</strong>
+        </span>
+        @enderror
         <button class="btn btn-outline-dark btn-md my-2 my-sm-0" type="submit">Search</button>
     </form>
 </div>
