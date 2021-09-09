@@ -13,8 +13,11 @@
 
 <div class="card-body">
 <h4>Current Role: 
-@if($data->is_admin){{'Adimn'}}
-@else{{'User'}}
+@if($data->is_admin == '1'){{'Adimn'}}
+@elseif($data->is_admin == '0'){{'User'}}
+@elseif($data->is_admin == '2'){{'Computer lab Admin'}}
+@elseif($data->is_admin == '3'){{'Physics lab Admin'}}
+@elseif($data->is_admin == '4'){{'Chemistry lab Admin'}}
 @endif
 </h4>
 <div>
@@ -47,6 +50,9 @@
 <option selected>{{$data->is_admin}}</option>
 <option value='1'>Adimn</option>
 <option value='0'>User</option>
+<option value='2'>Computer Lab Admin</option>
+<option value='3'>Physics Lab Admin</option>
+<option value='4'>Chemistry Lab Admin</option>
 
 </select>
 </label>

@@ -1,7 +1,7 @@
 <link rel="stylesheet" href="/css/dash.css">
 
 
-@extends('layouts.comadminlayout')
+@extends('layouts.cheadminlayout')
 
 @section('content')
 
@@ -20,7 +20,7 @@
 <div class="row  offset-lg-1 offset-sm-3 ofset-md-2 offset-3">
 
     <div class="">
-    <div class="container"><h3><a href="/computeradmincomplaint">Computer Laboratory</a></h3></div>
+    <div class="container"><h3><a href="/chemistryadmincomplaint">Computer Laboratory</a></h3></div>
         <div class="card-deck">
 
 
@@ -35,7 +35,7 @@
                                     <span><i class="fa fa-tasks fa-4x" aria-hidden="true"></i></span>
                                 </div>
                                 <div class="col-6 col-lg-6 col-sm-6 col-md-6 text-right">
-                                    <h3><b>&nbsp{{$countnu['total'] }}</b> </h3>
+                                    <h3><b>&nbsp{{$countnu['totalc'] }}</b> </h3>
                                 </div>
                             </div>
                         </div>
@@ -54,7 +54,7 @@
                                 <span><i class="fa fa-ban fa-4x" aria-hidden="true"></i></i></span>
                             </div>
                             <div class="col-6 col-lg-6 col-sm-6 col-md-6 text-right">
-                                <h3><b>&nbsp{{$countnu['totalnot'] }}</b></h3>
+                                <h3><b>&nbsp{{$countnu['totalnotc'] }}</b></h3>
                             </div>
                         </div>
                     </div>
@@ -73,7 +73,7 @@
                                 <span><i class="fas fa-step-forward fa-4x"></i></span>
                             </div>
                             <div class="col-6 col-lg-6 col-sm-6 col-md-6 text-right">
-                                <h3><b>&nbsp&nbsp{{$countnu['totalpro'] }}</b></h3>
+                                <h3><b>&nbsp&nbsp{{$countnu['totalproc'] }}</b></h3>
                             </div>
                         </div>
                     </div>
@@ -91,7 +91,7 @@
                                 <span><i class="fa fa-check fa-4x" aria-hidden="true"></i></i></span>
                             </div>
                             <div class="col-6 col-lg-6 col-sm-6 col-md-6 text-right">
-                                <h3><b>&nbsp&nbsp{{$countnu['totalcom'] }}</b></h3>
+                                <h3><b>&nbsp&nbsp{{$countnu['totalcomc'] }}</b></h3>
                             </div>
                         </div>
                     </div>

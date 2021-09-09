@@ -189,6 +189,105 @@ Route::post('/userfeedback','FeedbackController@store')->middleware('auth');
 
 
 
+
+//route for computer admin
+//route for admin login page  and protect auth using 'isadmin' middleware
+Route::get('comadmin', ['middleware' => 'iscomadmin', function () {
+    return view('coadmin.coadmin');
+}]);
+
+//route for count of computer complaint in comadmin view
+Route::get('comadmin','ComputeradminController@totalcomplaint')->middleware('iscomadmin');
+
+//route for feach data from db computer admin page table
+Route::get('/computeradmincomplaint','ComputeradminController@list')->middleware('iscomadmin');
+
+//route for details of complaint computer computer admin view (admin though)
+Route::get('/detailscadmincomplaint/{id}','ComputeradminController@update')->middleware('iscomadmin');
+
+//r0ute for update view of computer complaints in computer admin
+Route::get('/updatestatuscadmin/{id}','ComputeradminController@updatestatus')->middleware('iscomadmin');
+
+//Route for update cmplaint staus of computer complaint through computer admin
+Route::post('/updatecadmincomplaint','ComputeradminController@updatecomplaint')->middleware('iscomadmin');
+
+//route for search computer complaint through cadmin
+Route::get('/searchcadmin','ComputeradminController@search')->middleware('iscomadmin');
+
+//route for see feedback of user through c admin
+Route::get('/feedbackcadmin','ComputeradminController@feedback')->middleware('iscomadmin');
+
+
+
+
+
+
+//route chemistry for  admin
+//route for admin login page  and protect auth using 'isadmin' middleware
+Route::get('cheadmin', ['middleware' => 'ischeadmin', function () {
+    return view('cheadmin.cheadmin');
+}]);
+
+//route for count of chemistry complaint in phyadmin view
+Route::get('cheadmin','ChemistryadminController@totalcomplaint')->middleware('ischeadmin');
+
+//route for feach data from db chemistry admin page table
+Route::get('/chemistryadmincomplaint','ChemistryadminController@list')->middleware('ischeadmin');
+
+//route for details of complaint chemistry admin view (admin though)
+Route::get('/detailschadmincomplaint/{id}','ChemistryadminController@update')->middleware('ischeadmin');
+
+//r0ute for update view of computer complaints in computer admin
+Route::get('/updatestatuschadmin/{id}','ChemistryadminController@updatestatus')->middleware('ischeadmin');
+
+//Route for update cmplaint staus of computer complaint through computer admin
+Route::post('/updatechadmincomplaint','ChemistryadminController@updatecomplaint')->middleware('ischeadmin');
+
+//delete complaint of chemistry through che admin
+Route::get('/deletechcomplaint/{id}','ChemistryadminController@deletecomplaintc')->middleware('ischeadmin');
+
+//route for search chemistry complaint through che cadmin
+Route::get('/searchchadmin','ChemistryadminController@search')->middleware('ischeadmin');
+
+//route for see feedback of user through che admin
+Route::get('/feedbackchadmin','ChemistryadminController@feedback')->middleware('ischeadmin');
+
+
+
+
+//route physics for  admin
+//route for admin login page  and protect auth using 'isadmin' middleware
+Route::get('phyadmin', ['middleware' => 'isphyadmin', function () {
+    return view('phyadmin.phyadmin');
+}]);
+
+//route for count of physics complaint in phyadmin view
+Route::get('phyadmin','PhysicsadminController@totalcomplaint')->middleware('isphyadmin');
+
+//route for feach data from db chemistry admin page table
+Route::get('/physicsadmincomplaint','PhysicsadminController@list')->middleware('isphyadmin');
+
+//route for details of complaint physics admin view (admin though)
+Route::get('/detailsphadmincomplaint/{id}','PhysicsadminController@update')->middleware('isphyadmin');
+
+//r0ute for update view of physics complaints in physics admin
+Route::get('/updatestatusphadmin/{id}','PhysicsadminController@updatestatus')->middleware('isphyadmin');
+
+//Route for update cmplaint staus of physics complaint through physics admin
+Route::post('/updatephadmincomplaint','PhysicsadminController@updatecomplaint')->middleware('isphyadmin');
+
+//delete complaint of physics through phy admin
+Route::get('/deletephcomplaint/{id}','PhysicsadminController@deletecomplaintc')->middleware('isphyadmin');
+
+//route for search physics complaint through phy cadmin
+Route::get('/searchphadmin','PhysicsadminController@search')->middleware('isphyadmin');
+
+//route for see feedback of user through phy admin
+Route::get('/feedbackphadmin','PhysicsadminController@feedback')->middleware('isphyadmin');
+
+
+
+
 Auth::routes();
 
 Route::view('/home', 'user.userindex');

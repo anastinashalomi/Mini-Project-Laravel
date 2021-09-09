@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 Use User;
 
 class LoginController extends Controller
@@ -31,12 +32,41 @@ class LoginController extends Controller
     //protected $redirectTo = RouteServiceProvider::HOME;
 
     //for user redirect to user view
-    protected function authenticated(Request $request,$user){
-
-        if( $user->is_admin){
-            return redirect ('admin');
+    protected function redirectTo(){
+        
+        //admin login
+        if( Auth::user()->is_admin == '1')
+        {
+            return ('admin');
         }
-        return redirect ('userindex');
+        //computer admin login
+        elseif( Auth::user()->is_admin == '2')
+        {
+            return ('comadmin');
+        }
+
+        //physics admin login
+        elseif( Auth::user()->is_admin == '3')
+        {
+            return ('phyadmin');
+        }
+
+         //chemistry admin login
+        elseif( Auth::user()->is_admin == '4')
+         {
+             return ('cheadmin');
+         }
+
+        //normal user login
+        else
+        {
+            return ('userindex');
+        }
+
+        //else
+        //{
+        //return ('userindex');
+        //}
     }
 
 

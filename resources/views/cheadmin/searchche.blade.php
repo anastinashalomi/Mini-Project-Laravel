@@ -1,68 +1,51 @@
 <link rel="stylesheet" href="/css/dash.css">
 
 
-@extends('layouts.adminlayout')
+@extends('layouts.cheadminlayout')
 
 @section('content')
 
-<div class="row offset-lg-1 offset-sm-3 ofset-md-2 offset-3" style="margin-top:5px">
-    <form action="/searchuser" class="form-inline my-2 my-lg-0" method="get">
-        @csrf
-        <input id="query" type="search" class="form-control  @error('query') is-invalid @enderror mr-sm-2" name="query" type="search" required placeholder="SearchByNameorID">
-        @error('query')
-         <span class="invalid-feedback" role="alert">
-            <strong>{{ $message }}</strong>
-        </span>
-        @enderror
-        <button class="btn btn-outline-dark btn-md my-2 my-sm-0" type="submit">Search</button>
-    </form>
-</div>
+                
 
 <div class="container topic row offset-lg-1 offset-sm-3 ofset-md-2 offset-3" >
-<h4 class="">User Details</h4>
+<h4 class="">Complaints of Computer Laboratory</h4>
 </div>
 
 <div class="row offset-lg-1 offset-sm-3 ofset-md-2 offset-3" >
 <tr>
 <table class="table table-dark">
+<th>Complaint ID</th>
 <th>Name</th>
 <th>Student or Staff ID</th>
-<th>Email Adress</th>
-<th>Role</th>
-<th>Edit Role</th>
+<th>Complaint</th>
+<th>Current Status</th>
+<th>Action</th>
 <th>Delete</th>
 </tr>
 
 @foreach($data as $i)
 <tr>
+<td>{{ $i->id}}</td>
 <td>{{ $i->name}}</td>
 <td>{{ $i->sid}}</td>
-<td>{{ $i->email}}</td>
+<td>{{ $i->complaint}}</td>
 <td>
-@if($i->is_admin == '1')
-{{'Admin'}}
-@elseif($i->is_admin == '0')
-{{'User'}}
-@elseif($i->is_admin == '2')
-{{'Computer Lab Admin'}}
-@elseif($i->is_admin == '3')
-{{'Physics Lab Admin'}}
-@elseif($i->is_admin == '4')
-{{'Chemistry Lab Admin'}}
+@if($i->currentstatus == "Completed")
+<button class="btn btn-success">{{ $i->currentstatus}}</button>
+@elseif($i->currentstatus == "Processing")
+<button class="btn btn-primary">{{ $i->currentstatus}}</button>
+@else($i->currentstatus == "Not Processed")
+<button class="btn btn-danger">{{ $i->currentstatus}}</button>
 @endif
 </td>
-<td><a href="/editrole/{{$i->id}}" class="btn btn-warning">Edit Role</a></td>
+<td><a href="/detailschadmincomplaint/{{$i->id}}" class="btn btn-warning">Action</a></td>
+<!--<td><a href="/deleteccomplaint/{{$i->id}}" class="btn btn-warning">Delete</a></td>-->
 <td>
-@if($i->is_admin)
-<a href="" class="btn btn-primary disabled">Delete</a>
-@else
-<!--<a href="/deleteuser/{{$i->id}}" class="btn btn-warning">Delete</a>-->
-
             <!-- Button trigger modal -->
             <a href="" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal{{$i->id}}">
                 Delete
             </a>
-
+        </td>
             <!-- Modal -->
             <div class="modal " id="exampleModal{{$i->id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
@@ -73,23 +56,28 @@
                                     class="fa fa-window-close" aria-hidden="true"></i></button>
                         </div>
                         <div class="modal-body">
-                            <h4 class="text-dark">Are you sure, You want to remove {{$i->name}}...</h4>
+                            <h4 class="text-dark">Are you sure, You want to delete {{$i->id}} complaint...</h4>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-primary" data-bs-dismiss="modal">No, Exit</button>
-                            <a href="/deleteuser/{{$i->id}}" class="btn btn-danger">Yes, Delete</a>
+                            <a href="/deletechcomplaint/{{$i->id}}" class="btn btn-danger">Yes, Delete</a>
                         </div>
                     </div>
                 </div>
             </div>
-
-
-@endif
-</td>
 </tr>
 @endforeach
 
 </table>
+
+@forelse($data as $i)
+@empty
+<div class="alert alert-secondary alert-dismissible fade show">
+    <strong>Not result founded
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+</div>
+@endforelse
+
 </div>
 
 

@@ -63,6 +63,8 @@ class Kernel extends HttpKernel
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
         'iscomadmin' => \App\Http\Middleware\Comadminmiddleware::class,
+        'isphyadmin' => \App\Http\Middleware\Phyadminmiddleware::class,
+        'ischeadmin' => \App\Http\Middleware\Cheadminmiddleware::class,
     ];
 
     /**

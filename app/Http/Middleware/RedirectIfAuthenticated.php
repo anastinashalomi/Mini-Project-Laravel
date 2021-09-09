@@ -23,6 +23,8 @@ class RedirectIfAuthenticated
             if(Auth::user()->is_admin){
                 return redirect('admin');
             }
+
+            //return redirect('login');
             return redirect('user');
             //return redirect(RouteServiceProvider::HOME);
         }

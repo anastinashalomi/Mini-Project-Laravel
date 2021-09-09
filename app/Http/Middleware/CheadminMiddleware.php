@@ -5,7 +5,7 @@ namespace App\Http\Middleware;
 use Closure;
 use Auth;
 
-class Comadminmiddleware
+class CheadminMiddleware
 {
     /**
      * Handle an incoming request.
@@ -16,13 +16,12 @@ class Comadminmiddleware
      */
     public function handle($request, Closure $next)
     {
-        if(Auth::user()->is_admin== '2')
-        {
+        if(Auth::user()->is_admin== '4'){
             return $next($request);
         }else
         {
-        return redirect('login');
-        //return redirect('userindex');
+            return redirect('login');
+            //return redirect('userindex');
         }
     }
 }

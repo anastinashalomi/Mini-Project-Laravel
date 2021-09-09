@@ -18,15 +18,18 @@ class IsAdmin
     {
         // check user as admin then go to admin otherwise go to user if auth
         if(Auth::user()){
-            if(Auth::user()->is_admin){
+            
+            if(Auth::user()->is_admin== '1'){
                 return $next($request);
-            }
-            return redirect('user');
+            }else{
+                return redirect('login');
+                //return redirect('userindex');
+        }
         }
         
        //else auth ( protect route admin ) Go to home
-        return redirect('login');
+        //return redirect('login');
 
-        return $next($request);
+        //return $next($request);
     }
 }
